@@ -3,221 +3,392 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Barbers 55 – Premium barbershop in West London. Precision cuts, skin fades, and beard work rooted in real culture.">
+  <meta name="description" content="The Barbers 55 – West London's finest barbershop. Precision cuts, skin fades & beard sculpting rooted in real culture. 224 Horn Lane, Acton.">
   <title>The Barbers 55 | West London Barbershop</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="is-loading">
 
-  <div class="grain" aria-hidden="true"></div>
+  <!-- ======= PRELOADER ======= -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">55</div>
+      <div class="preloader-sub">THE BARBERS</div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloaderBar"></div>
+      </div>
+    </div>
+    <span class="preloader-count" id="preloaderCount">00%</span>
+  </div>
 
-  <!-- NAV -->
+  <!-- ======= CUSTOM CURSOR ======= -->
+  <div id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- ======= NAV ======= -->
   <nav class="nav" id="nav">
     <div class="nav-inner container">
-      <a class="nav-logo" href="#hero">THE BARBERS <span>55</span></a>
+      <a class="nav-logo" href="#hero">THE BARBERS <em>55</em></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#find-us" class="nav-link">Find Us</a></li>
-        <li><a href="tel:+447931010557" class="nav-cta">Book Now</a></li>
+        <li><a href="#services" class="nav-link" data-cursor="hover">Services</a></li>
+        <li><a href="#about" class="nav-link" data-cursor="hover">About</a></li>
+        <li><a href="#find-us" class="nav-link" data-cursor="hover">Find Us</a></li>
+        <li>
+          <a href="tel:+447931010557" class="nav-cta" data-cursor="hover">
+            <span>Book Now</span>
+          </a>
+        </li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ======= HERO ======= -->
   <section class="hero" id="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-lines"></div>
-    </div>
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-scan" aria-hidden="true"></div>
+    <div class="hero-bg-num" aria-hidden="true">55</div>
+
     <div class="hero-content container">
-      <span class="hero-eyebrow">West London &nbsp;·&nbsp; 224 Horn Lane</span>
+      <span class="hero-eyebrow">West London &nbsp;·&nbsp; Since 2022</span>
       <h1 class="hero-title">
-        THE<br>BARBERS<br><em>55</em>
+        <div class="line"><div class="line-inner">THE</div></div>
+        <div class="line"><div class="line-inner">BARBERS</div></div>
+        <div class="line gold-line"><div class="line-inner">55</div></div>
       </h1>
-      <p class="hero-tagline">Precision cuts. Real culture.<br>No compromise.</p>
+      <p class="hero-tagline">
+        Precision cuts. Real culture.<br>No compromise.
+      </p>
       <div class="hero-actions">
-        <a href="tel:+447931010557" class="btn btn-gold">Call to Book</a>
-        <a href="https://wa.me/447931010557" class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+        <a href="tel:+447931010557" class="btn btn-gold btn-magnetic" data-cursor="hover">
+          <span>Call to Book</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://wa.me/447931010557" class="btn btn-outline btn-magnetic" target="_blank" rel="noopener noreferrer" data-cursor="hover">
+          <span>WhatsApp Us</span>
+        </a>
       </div>
     </div>
 
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-
     <div class="hero-socials">
-      <a href="https://www.instagram.com/thebarbers55uk" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <a href="https://www.instagram.com/thebarbers55uk" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-cursor="hover">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
           <circle cx="12" cy="12" r="4"/>
           <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
         </svg>
       </a>
-      <a href="https://www.threads.com/@thebarbers55uk" target="_blank" rel="noopener noreferrer" aria-label="Threads">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 192 192" fill="currentColor">
-          <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.368c-14.984 0-27.475 6.396-35.157 18.036l13.5 9.263c5.766-8.756 14.781-10.634 21.657-10.634h.252c8.35.055 14.633 2.584 18.681 7.522 2.964 3.614 4.94 8.595 5.926 14.88-7.382-1.255-15.385-1.642-23.945-1.158-24.072 1.387-39.56 15.483-38.51 35.02.527 9.923 5.625 18.476 14.367 24.077 7.374 4.812 16.878 7.168 26.747 6.61 13.026-.742 23.247-5.68 30.378-14.67 5.464-6.85 8.927-15.723 10.493-27.044 6.282 3.792 10.942 8.81 13.524 14.93 4.578 10.796 4.844 28.562-9.483 42.85-12.553 12.523-27.613 17.945-50.421 18.114-25.237-.186-44.319-8.281-56.704-24.063-11.645-14.84-17.667-36.555-17.912-64.558.245-28.003 6.267-49.718 17.912-64.558 12.385-15.782 31.467-23.877 56.704-24.063 25.421.187 44.816 8.318 57.676 24.166 6.299 7.788 11.02 17.578 14.1 29.013l15.818-4.215c-3.699-13.975-9.526-26.063-17.433-36.079C119.315 11.414 96.74 1.158 67.962.99h-.492C38.867 1.158 16.033 11.485 3.393 28.858 -8.154 45.08-13.967 68.647-14 96.022c.033 27.375 5.846 50.942 17.393 67.164 12.64 17.373 35.474 27.7 64.083 27.868h.492c25.6-.166 43.61-6.895 58.435-21.688 19.963-19.912 19.386-44.856 12.804-60.114-4.654-10.981-13.587-19.94-27.67-25.264zm-51.207 48.538c-10.554.6-21.494-4.136-21.978-13.285-.36-6.819 4.851-14.416 20.543-15.332a103.6 103.6 0 0 1 6.21-.186c5.981 0 11.557.567 16.633 1.647-1.887 23.45-11.773 26.647-21.408 27.156z"/>
+      <a href="https://www.threads.com/@thebarbers55uk" target="_blank" rel="noopener noreferrer" aria-label="Threads" data-cursor="hover">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 192 192" fill="currentColor" aria-hidden="true">
+          <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.368c-14.984 0-27.475 6.396-35.157 18.036l13.5 9.263c5.766-8.756 14.781-10.634 21.657-10.634h.252c8.35.055 14.633 2.584 18.681 7.522 2.964 3.614 4.94 8.595 5.926 14.88-7.382-1.255-15.385-1.642-23.945-1.158-24.072 1.387-39.56 15.483-38.51 35.02.527 9.923 5.625 18.476 14.367 24.077 7.374 4.812 16.878 7.168 26.747 6.61 13.026-.742 23.247-5.68 30.378-14.67 5.464-6.85 8.927-15.723 10.493-27.044 6.282 3.792 10.942 8.81 13.524 14.93 4.578 10.796 4.844 28.562-9.483 42.85-12.553 12.523-27.613 17.945-50.421 18.114-25.237-.186-44.319-8.281-56.704-24.063-11.645-14.84-17.667-36.555-17.912-64.558.245-28.003 6.267-49.718 17.912-64.558 12.385-15.782 31.467-23.877 56.704-24.063 25.421.187 44.816 8.318 57.676 24.166 6.299 7.788 11.02 17.578 14.1 29.013l15.818-4.215c-3.699-13.975-9.526-26.063-17.433-36.079C119.315 11.414 96.74 1.158 67.962.99h-.492C38.867 1.158 16.033 11.485 3.393 28.858-8.154 45.08-13.967 68.647-14 96.022c.033 27.375 5.846 50.942 17.393 67.164 12.64 17.373 35.474 27.7 64.083 27.868h.492c25.6-.166 43.61-6.895 58.435-21.688 19.963-19.912 19.386-44.856 12.804-60.114-4.654-10.981-13.587-19.94-27.67-25.264zm-51.207 48.538c-10.554.6-21.494-4.136-21.978-13.285-.36-6.819 4.851-14.416 20.543-15.332a103.6 103.6 0 0 1 6.21-.186c5.981 0 11.557.567 16.633 1.647-1.887 23.45-11.773 26.647-21.408 27.156z"/>
         </svg>
+      </a>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-label">Scroll</div>
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    </div>
+  </section>
+
+  <!-- ======= MARQUEE ======= -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track marquee-fwd">
+      <span>PRECISION CUTS</span><span class="sep">—</span>
+      <span>SKIN FADES</span><span class="sep">—</span>
+      <span>BEARD SCULPTING</span><span class="sep">—</span>
+      <span>HOT TOWEL SHAVE</span><span class="sep">—</span>
+      <span>WEST LONDON</span><span class="sep">—</span>
+      <span>224 HORN LANE</span><span class="sep">—</span>
+      <span>PRECISION CUTS</span><span class="sep">—</span>
+      <span>SKIN FADES</span><span class="sep">—</span>
+      <span>BEARD SCULPTING</span><span class="sep">—</span>
+      <span>HOT TOWEL SHAVE</span><span class="sep">—</span>
+      <span>WEST LONDON</span><span class="sep">—</span>
+      <span>224 HORN LANE</span><span class="sep">—</span>
+    </div>
+    <div class="marquee-track marquee-rev">
+      <span>EST. 2022</span><span class="sep">—</span>
+      <span>WALK-INS WELCOME</span><span class="sep">—</span>
+      <span>REAL CULTURE</span><span class="sep">—</span>
+      <span>UNDERGROUND VIBES</span><span class="sep">—</span>
+      <span>ACTON W3</span><span class="sep">—</span>
+      <span>NO COMPROMISE</span><span class="sep">—</span>
+      <span>EST. 2022</span><span class="sep">—</span>
+      <span>WALK-INS WELCOME</span><span class="sep">—</span>
+      <span>REAL CULTURE</span><span class="sep">—</span>
+      <span>UNDERGROUND VIBES</span><span class="sep">—</span>
+      <span>ACTON W3</span><span class="sep">—</span>
+      <span>NO COMPROMISE</span><span class="sep">—</span>
+    </div>
+  </div>
+
+  <!-- ======= SERVICES ======= -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-text">/ What We Do</span>
+        <h2 class="section-title split-reveal">
+          <span class="line"><span class="line-inner">SERVICES</span></span>
+        </h2>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" data-cursor="hover">
+          <div class="card-fill" aria-hidden="true"></div>
+          <div class="service-num">01</div>
+          <h3 class="service-name">Classic Cut</h3>
+          <p class="service-desc">Scissor or clipper cut tailored to your style. Clean lines, sharp finish every time.</p>
+          <div class="service-footer">
+            <span class="service-price">£15</span>
+            <span class="service-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="service-card" data-cursor="hover">
+          <div class="card-fill" aria-hidden="true"></div>
+          <div class="service-num">02</div>
+          <h3 class="service-name">Skin Fade</h3>
+          <p class="service-desc">Zero to skin with seamless blending. Bald, low, mid, or high — your vision, our craft.</p>
+          <div class="service-footer">
+            <span class="service-price">£20</span>
+            <span class="service-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="service-card" data-cursor="hover">
+          <div class="card-fill" aria-hidden="true"></div>
+          <div class="service-num">03</div>
+          <h3 class="service-name">Beard Trim</h3>
+          <p class="service-desc">Shape, line-up, and sculpt. Your beard framed to perfection every single visit.</p>
+          <div class="service-footer">
+            <span class="service-price">£10</span>
+            <span class="service-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="service-card" data-cursor="hover">
+          <div class="card-fill" aria-hidden="true"></div>
+          <div class="service-num">04</div>
+          <h3 class="service-name">Cut &amp; Beard</h3>
+          <p class="service-desc">The full package. Haircut and full beard treatment in one clean session.</p>
+          <div class="service-footer">
+            <span class="service-price">£28</span>
+            <span class="service-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="service-card" data-cursor="hover">
+          <div class="card-fill" aria-hidden="true"></div>
+          <div class="service-num">05</div>
+          <h3 class="service-name">Kids Cut</h3>
+          <p class="service-desc">Patient, precise, and sharp. Premium cuts for under 12s — no stress, no rush.</p>
+          <div class="service-footer">
+            <span class="service-price">£12</span>
+            <span class="service-arrow">→</span>
+          </div>
+        </div>
+
+        <div class="service-card" data-cursor="hover">
+          <div class="card-fill" aria-hidden="true"></div>
+          <div class="service-num">06</div>
+          <h3 class="service-name">Hot Towel Shave</h3>
+          <p class="service-desc">Traditional straight razor shave with hot towel treatment. The classic experience.</p>
+          <div class="service-footer">
+            <span class="service-price">£25</span>
+            <span class="service-arrow">→</span>
+          </div>
+        </div>
+
+      </div>
+      <p class="services-note">* Prices are indicative. Call ahead to confirm.</p>
+    </div>
+  </section>
+
+  <!-- ======= STATS ======= -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num" data-target="3">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Years in the Game</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="5000">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="15000">0</div>
+          <div class="stat-suffix">+</div>
+          <div class="stat-label">Cuts Delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-target="1">0</div>
+          <div class="stat-suffix"></div>
+          <div class="stat-label">West London Location</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= ABOUT ======= -->
+  <section class="about section" id="about">
+    <div class="about-quote-wrap container">
+      <blockquote class="about-quote split-reveal">
+        <span class="line"><span class="line-inner">"We don't just</span></span>
+        <span class="line"><span class="line-inner">cut hair —</span></span>
+        <span class="line gold-line"><span class="line-inner">we build confidence."</span></span>
+      </blockquote>
+    </div>
+
+    <div class="about-body container">
+      <div class="about-grid">
+        <div class="about-visual" data-parallax="-0.15">
+          <div class="about-img-frame">
+            <div class="about-img-inner">
+              <span class="about-img-num">55</span>
+              <span class="about-img-label">Add your photo here</span>
+            </div>
+          </div>
+          <div class="about-badge">
+            <div class="badge-inner">
+              <span>West</span>
+              <em>London</em>
+              <span>Est. 2022</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-label reveal-text">/ Our Story</span>
+          <h2 class="section-title split-reveal">
+            <span class="line"><span class="line-inner">CULTURE</span></span>
+            <span class="line"><span class="line-inner">FIRST.</span></span>
+          </h2>
+          <div class="about-body-text reveal-text">
+            <p>The Barbers 55 isn't just a barbershop — it's a space where craft meets culture. Born in West London, built for the community, rooted in the sounds and spirit of underground hip hop.</p>
+            <p>Our barbers are artists. Every cut is deliberate, every line intentional. Whether you're coming in for a skin fade, a full beard sculpt, or the whole package — you leave looking sharp and feeling right.</p>
+            <p>Walk-ins welcome. Appointments preferred. Call us, WhatsApp us — we're here for you.</p>
+          </div>
+          <div class="about-contacts reveal-text">
+            <a href="tel:+447931010557" class="contact-pill" data-cursor="hover">
+              <span class="pill-label">Phone</span>
+              <span class="pill-val">+44 7931 010557</span>
+            </a>
+            <a href="mailto:Thebarbers55uk@gmail.com" class="contact-pill" data-cursor="hover">
+              <span class="pill-label">Email</span>
+              <span class="pill-val">Thebarbers55uk@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= VIBES ======= -->
+  <section class="vibes section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label reveal-text">/ The Aesthetic</span>
+        <h2 class="section-title split-reveal">
+          <span class="line"><span class="line-inner">THE VIBE</span></span>
+        </h2>
+      </div>
+    </div>
+    <div class="vibes-grid">
+      <div class="vibe-item vibe-tall" data-cursor="hover">
+        <div class="vibe-bg vibe-bg-1"></div>
+        <div class="vibe-overlay">
+          <span>Culture</span>
+        </div>
+      </div>
+      <div class="vibe-item" data-cursor="hover">
+        <div class="vibe-bg vibe-bg-2"></div>
+        <div class="vibe-overlay">
+          <span>Precision</span>
+        </div>
+      </div>
+      <div class="vibe-item" data-cursor="hover">
+        <div class="vibe-bg vibe-bg-3"></div>
+        <div class="vibe-overlay">
+          <span>Identity</span>
+        </div>
+      </div>
+      <div class="vibe-item vibe-wide" data-cursor="hover">
+        <div class="vibe-bg vibe-bg-4"></div>
+        <div class="vibe-overlay">
+          <span>Community</span>
+        </div>
+      </div>
+      <div class="vibe-item" data-cursor="hover">
+        <div class="vibe-bg vibe-bg-5"></div>
+        <div class="vibe-overlay">
+          <span>Craft</span>
+        </div>
+      </div>
+      <div class="vibe-item vibe-tall-r" data-cursor="hover">
+        <div class="vibe-bg vibe-bg-6"></div>
+        <div class="vibe-overlay">
+          <span>Style</span>
+        </div>
+      </div>
+    </div>
+    <div class="vibes-cta container">
+      <p class="vibes-cta-text reveal-text">Follow us on Instagram for daily inspiration</p>
+      <a href="https://www.instagram.com/thebarbers55uk" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-magnetic" data-cursor="hover">
+        <span>@thebarbers55uk</span>
       </a>
     </div>
   </section>
 
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>PRECISION CUTS</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>SKIN FADES</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>BEARD SCULPTING</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>HOT TOWEL SHAVE</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>WEST LONDON</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>224 HORN LANE</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>PRECISION CUTS</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>SKIN FADES</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>BEARD SCULPTING</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>HOT TOWEL SHAVE</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>WEST LONDON</span><span class="dot">&nbsp;·&nbsp;</span>
-      <span>224 HORN LANE</span><span class="dot">&nbsp;·&nbsp;</span>
-    </div>
-  </div>
-
-  <!-- SERVICES -->
-  <section class="services section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">/ What We Do</span>
-        <h2 class="section-title">SERVICES</h2>
-      </div>
-      <div class="services-grid">
-        <div class="service-card fade-in">
-          <div class="service-number">01</div>
-          <h3 class="service-name">Classic Cut</h3>
-          <p class="service-desc">Scissor or clipper cut tailored to your style. Clean lines, sharp finish every time.</p>
-          <div class="service-price">£15</div>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-number">02</div>
-          <h3 class="service-name">Skin Fade</h3>
-          <p class="service-desc">Zero to skin with seamless blending. Bald, low, mid, or high — your vision, our craft.</p>
-          <div class="service-price">£20</div>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-number">03</div>
-          <h3 class="service-name">Beard Trim</h3>
-          <p class="service-desc">Shape, line-up, and sculpt your beard to frame your face with precision.</p>
-          <div class="service-price">£10</div>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-number">04</div>
-          <h3 class="service-name">Cut &amp; Beard</h3>
-          <p class="service-desc">The full package. Haircut and beard treatment in one clean session.</p>
-          <div class="service-price">£28</div>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-number">05</div>
-          <h3 class="service-name">Kids Cut</h3>
-          <p class="service-desc">Precision cuts for the young ones. Patient, careful, sharp — under 12 years old.</p>
-          <div class="service-price">£12</div>
-        </div>
-        <div class="service-card fade-in">
-          <div class="service-number">06</div>
-          <h3 class="service-name">Hot Towel Shave</h3>
-          <p class="service-desc">Traditional straight razor shave with hot towel treatment. The classic experience.</p>
-          <div class="service-price">£25</div>
-        </div>
-      </div>
-      <p class="services-note">* Prices are indicative and subject to change. Call or WhatsApp to confirm before your visit.</p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-visual">
-          <div class="about-img-placeholder">
-            <span>55</span>
-          </div>
-          <div class="about-badge">
-            <span>West London</span>
-            <span>·</span>
-            <span>Est. 2022</span>
-          </div>
-        </div>
-        <div class="about-text fade-in">
-          <span class="section-label">/ Our Story</span>
-          <h2 class="section-title">CULTURE<br>FIRST.</h2>
-          <p>The Barbers 55 isn't just a barbershop — it's a space where craft meets culture. Born in West London, built for the community, and rooted in the sounds and spirit of underground hip hop.</p>
-          <p>Our barbers are artists. Every cut is deliberate, every line intentional. Whether you're walking in for a skin fade, a full beard sculpt, or the whole package — you leave looking sharp and feeling right.</p>
-          <p>Walk-ins welcome. Appointments preferred. Call us, WhatsApp us — we're here for you.</p>
-          <div class="about-contacts">
-            <a href="tel:+447931010557" class="contact-item">
-              <span class="contact-label">Phone</span>
-              <span class="contact-value">+44 7931 010557</span>
-            </a>
-            <a href="mailto:Thebarbers55uk@gmail.com" class="contact-item">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">Thebarbers55uk@gmail.com</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FIND US -->
+  <!-- ======= FIND US ======= -->
   <section class="find-us section" id="find-us">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">/ Come Through</span>
-        <h2 class="section-title">FIND US</h2>
+        <span class="section-label reveal-text">/ Come Through</span>
+        <h2 class="section-title split-reveal">
+          <span class="line"><span class="line-inner">FIND US</span></span>
+        </h2>
       </div>
       <div class="find-us-grid">
         <div class="find-us-info">
-          <div class="info-block fade-in">
-            <h3 class="info-title">ADDRESS</h3>
-            <p>224 Horn Lane<br>London, W3<br>Acton, West London</p>
-            <a href="https://maps.google.com/?q=224+Horn+Lane+London+W3" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Get Directions</a>
+          <div class="info-card reveal-text" data-cursor="hover">
+            <h3 class="info-card-title">Address</h3>
+            <p>224 Horn Lane<br>Acton, London W3</p>
+            <a href="https://maps.google.com/?q=224+Horn+Lane+London+W3" target="_blank" rel="noopener noreferrer" class="info-card-link">Get Directions →</a>
           </div>
-          <div class="info-block fade-in">
-            <h3 class="info-title">HOURS</h3>
+          <div class="info-card reveal-text" data-cursor="hover">
+            <h3 class="info-card-title">Hours</h3>
             <div class="hours-list">
-              <div class="hours-row">
-                <span>Monday – Friday</span>
-                <span>9:00 – 19:00</span>
-              </div>
-              <div class="hours-row">
-                <span>Saturday</span>
-                <span>9:00 – 18:00</span>
-              </div>
-              <div class="hours-row">
-                <span>Sunday</span>
-                <span>10:00 – 16:00</span>
-              </div>
+              <div class="hours-row"><span>Mon – Fri</span><span>9:00 – 19:00</span></div>
+              <div class="hours-row"><span>Saturday</span><span>9:00 – 18:00</span></div>
+              <div class="hours-row"><span>Sunday</span><span>10:00 – 16:00</span></div>
             </div>
-            <p class="hours-note">* Please call ahead to confirm hours.</p>
+            <small>* Please call ahead to confirm hours.</small>
           </div>
-          <div class="info-block fade-in">
-            <h3 class="info-title">CONTACT</h3>
-            <a href="tel:+447931010557" class="info-link">+44 7931 010557</a>
-            <a href="mailto:Thebarbers55uk@gmail.com" class="info-link">Thebarbers55uk@gmail.com</a>
+          <div class="info-card reveal-text" data-cursor="hover">
+            <h3 class="info-card-title">Contact</h3>
+            <a href="tel:+447931010557" class="info-card-link">+44 7931 010557</a>
+            <a href="mailto:Thebarbers55uk@gmail.com" class="info-card-link">Thebarbers55uk@gmail.com</a>
+            <div class="info-socials">
+              <a href="https://www.instagram.com/thebarbers55uk" target="_blank" rel="noopener noreferrer" data-cursor="hover">Instagram</a>
+              <a href="https://www.threads.com/@thebarbers55uk" target="_blank" rel="noopener noreferrer" data-cursor="hover">Threads</a>
+            </div>
           </div>
         </div>
-        <div class="map-container">
+        <div class="map-container reveal-text">
           <iframe
             src="https://maps.google.com/maps?q=224+Horn+Lane+London+W3&t=&z=16&ie=UTF8&iwloc=&output=embed"
-            width="100%"
-            height="480"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
+            width="100%" height="100%"
+            style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="The Barbers 55 – 224 Horn Lane, London">
           </iframe>
@@ -226,42 +397,42 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ======= FOOTER ======= -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-logo">THE BARBERS <span>55</span></div>
-          <p class="footer-tagline">Precision cuts. Real culture. No compromise.</p>
+          <div class="footer-logo">THE BARBERS <em>55</em></div>
+          <p>Precision cuts. Real culture.<br>224 Horn Lane, West London.</p>
           <div class="footer-socials">
-            <a href="https://www.instagram.com/thebarbers55uk" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <a href="https://www.instagram.com/thebarbers55uk" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-cursor="hover">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
                 <circle cx="12" cy="12" r="4"/>
                 <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
               </svg>
             </a>
-            <a href="https://www.threads.com/@thebarbers55uk" target="_blank" rel="noopener noreferrer" aria-label="Threads">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 192 192" fill="currentColor">
+            <a href="https://www.threads.com/@thebarbers55uk" target="_blank" rel="noopener noreferrer" aria-label="Threads" data-cursor="hover">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 192 192" fill="currentColor" aria-hidden="true">
                 <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.368c-14.984 0-27.475 6.396-35.157 18.036l13.5 9.263c5.766-8.756 14.781-10.634 21.657-10.634h.252c8.35.055 14.633 2.584 18.681 7.522 2.964 3.614 4.94 8.595 5.926 14.88-7.382-1.255-15.385-1.642-23.945-1.158-24.072 1.387-39.56 15.483-38.51 35.02.527 9.923 5.625 18.476 14.367 24.077 7.374 4.812 16.878 7.168 26.747 6.61 13.026-.742 23.247-5.68 30.378-14.67 5.464-6.85 8.927-15.723 10.493-27.044 6.282 3.792 10.942 8.81 13.524 14.93 4.578 10.796 4.844 28.562-9.483 42.85-12.553 12.523-27.613 17.945-50.421 18.114-25.237-.186-44.319-8.281-56.704-24.063-11.645-14.84-17.667-36.555-17.912-64.558.245-28.003 6.267-49.718 17.912-64.558 12.385-15.782 31.467-23.877 56.704-24.063 25.421.187 44.816 8.318 57.676 24.166 6.299 7.788 11.02 17.578 14.1 29.013l15.818-4.215c-3.699-13.975-9.526-26.063-17.433-36.079C119.315 11.414 96.74 1.158 67.962.99h-.492C38.867 1.158 16.033 11.485 3.393 28.858-8.154 45.08-13.967 68.647-14 96.022c.033 27.375 5.846 50.942 17.393 67.164 12.64 17.373 35.474 27.7 64.083 27.868h.492c25.6-.166 43.61-6.895 58.435-21.688 19.963-19.912 19.386-44.856 12.804-60.114-4.654-10.981-13.587-19.94-27.67-25.264zm-51.207 48.538c-10.554.6-21.494-4.136-21.978-13.285-.36-6.819 4.851-14.416 20.543-15.332a103.6 103.6 0 0 1 6.21-.186c5.981 0 11.557.567 16.633 1.647-1.887 23.45-11.773 26.647-21.408 27.156z"/>
               </svg>
             </a>
           </div>
         </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4>Navigate</h4>
           <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#find-us">Find Us</a></li>
-            <li><a href="tel:+447931010557">Book Now</a></li>
+            <li><a href="#services" data-cursor="hover">Services</a></li>
+            <li><a href="#about" data-cursor="hover">About</a></li>
+            <li><a href="#find-us" data-cursor="hover">Find Us</a></li>
+            <li><a href="tel:+447931010557" data-cursor="hover">Book Now</a></li>
           </ul>
-        </div>
-        <div class="footer-contact">
+        </nav>
+        <div class="footer-contact-col">
           <h4>Get In Touch</h4>
-          <p>224 Horn Lane<br>London, W3<br>Acton, West London</p>
-          <a href="tel:+447931010557">+44 7931 010557</a>
-          <a href="mailto:Thebarbers55uk@gmail.com">Thebarbers55uk@gmail.com</a>
+          <a href="tel:+447931010557" data-cursor="hover">+44 7931 010557</a>
+          <a href="mailto:Thebarbers55uk@gmail.com" data-cursor="hover">Thebarbers55uk@gmail.com</a>
+          <a href="https://wa.me/447931010557" target="_blank" rel="noopener noreferrer" data-cursor="hover">WhatsApp Us</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -271,6 +442,10 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
